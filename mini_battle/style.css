@@ -1,0 +1,149 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: row;
+    margin: 0;
+    padding: 30px;
+    align-items: center;
+
+    background: #222;
+
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+#titulo {
+    color: rgb(199, 199, 199);
+    font-weight: 800;
+}
+
+#input {
+    padding: 10px;
+    background: #333;
+    color: white;
+
+    border: 2px solid #222;
+    border-radius: 5px;
+}
+
+#botao {
+    margin-top: 150px;
+    padding: 15px 20px;
+
+    border: none;
+    border-radius: 5px;
+
+    background: #ffdd1e;
+    color: rgb(0, 0, 0);
+
+    cursor: pointer;
+
+    font-size: large;
+}
+
+#imgD {
+    display: block;
+
+    width: 200px;
+    height: 200px;
+
+    margin: 30px auto;
+
+    background: #000000;
+
+    border: 5px solid;
+    border-radius: 10px;
+
+    object-fit: contain;
+}
+
+#imgA {
+
+    display: block;
+
+
+
+    width: 180px;
+    height: 180px;
+
+    margin: 05px auto;
+
+    background: #000000;
+
+    
+    border-radius: 10px;
+
+    object-fit: contain;
+
+}
+
+#imgB {
+
+    display: block;
+
+
+
+    width: 180px;
+    height: 180px;
+
+    margin: 05px auto;
+
+    background: #000000;
+
+    
+    border-radius: 10px;
+
+    object-fit: contain;
+
+}
+
+p {
+    width: 300px;
+
+    margin: 10px auto;
+    padding: 10px;
+
+    background: #333;
+    color: white;
+
+    border-radius: 5px;
+
+    text-align: left;
+}
+
+#box1 {
+    height: 600px;
+    width: 400px;
+    margin-left: 50px;
+    background-color: #d62424;
+    border: 4px solid rgb(216, 216, 0);
+    border-radius: 10px;
+}
+#box2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 600px;
+    width: 400px;
+    margin-left: 50px;
+    background-color: #000000;
+    border: 4px solid rgb(48, 48, 48);
+    border-radius: 10px;
+}
+
+#box3 {
+    height: 600px;
+    width: 400px;
+    margin-left: 50px;
+    background-color: #1927a5;
+    border: 4px solid rgb(216, 216, 0);
+    border-radius: 10px;
+}
+
+#result {
+    color: white;
+}

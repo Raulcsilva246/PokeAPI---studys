@@ -1,0 +1,396 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Pokémon Rogue</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
+        rel="stylesheet"
+    >
+
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+
+    <main id="app">
+
+        <!-- =========================
+             TELA HOME
+        ========================== -->
+
+        <section id="home-screen" class="screen active">
+
+            <div class="home-panel">
+
+                <p class="eyebrow">
+                    POKÉMON ROGUE
+                </p>
+
+                <h1>
+                    POKÉMON<br>
+                    <span>ROGUE</span>
+                </h1>
+
+                <p class="subtitle">
+                    Monte sua equipe.<br>
+                    Vença batalhas.<br>
+                    Sobreviva às rodadas.
+                </p>
+
+                <button id="home-start" class="main-button">
+                    START
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             TELA DE PRÉ-JOGO
+        ========================== -->
+
+        <section id="pregame-screen" class="screen">
+
+            <div class="pregame-panel">
+
+                <div class="screen-heading">
+
+                    <span>
+                        FORMAÇÃO
+                    </span>
+
+                    <strong>
+                        ESCOLHA SUA EQUIPE
+                    </strong>
+
+                </div>
+
+
+                <div id="team-slots" class="team-slots">
+
+                    <div class="team-slot empty">
+
+                        <span>01</span>
+
+                        <div>
+                            ?
+                        </div>
+
+                    </div>
+
+
+                    <div class="team-slot empty">
+
+                        <span>02</span>
+
+                        <div>
+                            ?
+                        </div>
+
+                    </div>
+
+
+                    <div class="team-slot empty">
+
+                        <span>03</span>
+
+                        <div>
+                            ?
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <p id="roll-message" class="message">
+                    Role para escolher o primeiro Pokémon.
+                </p>
+
+
+                <div class="pregame-actions">
+
+                    <button
+                        id="roll-button"
+                        class="main-button"
+                    >
+                        ROLETAR
+                    </button>
+
+
+                    <button
+                        id="pregame-start"
+                        class="main-button hidden"
+                    >
+                        START
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             TELA DO JOGO
+        ========================== -->
+
+        <section id="game-screen" class="screen">
+
+
+            <!-- CABEÇALHO -->
+
+            <header class="game-header">
+
+                <div>
+
+                    <span class="label">
+                        RODADA
+                    </span>
+
+                    <strong id="round-number">
+                        1
+                    </strong>
+
+                </div>
+
+
+                <div
+                    id="battle-message"
+                    class="battle-message"
+                >
+                    Um Pokémon selvagem apareceu!
+                </div>
+
+
+                <div>
+
+                    <span class="label">
+                        POKÉMONS
+                    </span>
+
+                    <strong id="team-count">
+                        3/3
+                    </strong>
+
+                </div>
+
+            </header>
+
+
+            <!-- ÁREA PRINCIPAL DA BATALHA -->
+
+            <div class="battle-layout">
+
+
+                <!-- =========================
+                     EQUIPE DO JOGADOR
+                ========================== -->
+
+                <aside class="team-panel">
+
+                    <h2>
+                        SUA EQUIPE
+                    </h2>
+
+                    <div id="battle-team"></div>
+
+                </aside>
+
+
+                <!-- =========================
+                     CAMPO DE BATALHA
+                ========================== -->
+
+                <section class="battle-field">
+
+
+                    <!-- INFORMAÇÕES DO INIMIGO -->
+
+                    <div class="enemy-info">
+
+                        <div>
+
+                            <strong id="enemy-name">
+                                ---
+                            </strong>
+
+                            <span id="enemy-level">
+                                LV 5
+                            </span>
+
+                        </div>
+
+
+                        <div class="hp-bar">
+
+                            <div
+                                id="enemy-hp-bar"
+                                class="hp-fill"
+                            ></div>
+
+                        </div>
+
+
+                        <span id="enemy-hp-text">
+                            0 / 0 HP
+                        </span>
+
+                    </div>
+
+
+                    <!-- ARENA -->
+
+                    <div class="arena">
+
+                        <div class="enemy-pokemon">
+
+                            <img
+                                id="enemy-sprite"
+                                alt="Pokémon inimigo"
+                            >
+
+                        </div>
+
+
+                        <div class="player-pokemon">
+
+                            <img
+                                id="player-sprite"
+                                alt="Pokémon do jogador"
+                            >
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- PARTE INFERIOR DA BATALHA -->
+
+                    <div class="battle-bottom">
+
+
+                        <!-- INFORMAÇÕES DO JOGADOR -->
+
+                        <div class="player-info">
+
+                            <div class="player-name-line">
+
+                                <strong id="player-name">
+                                    ---
+                                </strong>
+
+                                <span id="player-level">
+                                    LV 5
+                                </span>
+
+                            </div>
+
+
+                            <div class="hp-bar">
+
+                                <div
+                                    id="player-hp-bar"
+                                    class="hp-fill"
+                                ></div>
+
+                            </div>
+
+
+                            <span id="player-hp-text">
+                                0 / 0 HP
+                            </span>
+
+                        </div>
+
+
+                        <!-- TERMINAL DE ATAQUES -->
+
+                        <div
+                            id="battle-terminal"
+                            class="battle-terminal"
+                        >
+
+                            <div id="terminal-log">
+                                Escolha um ataque.
+                            </div>
+
+
+                            <div
+                                id="moves"
+                                class="moves"
+                            ></div>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+            </div>
+
+
+            <!-- =========================
+                 MODAL PÓS-BATALHA
+            ========================== -->
+
+            <div
+                id="post-battle"
+                class="modal hidden"
+            >
+
+                <div class="modal-card">
+
+                    <h2 id="post-title">
+                        VITÓRIA!
+                    </h2>
+
+
+                    <p id="post-message">
+                        O inimigo foi derrotado.
+                    </p>
+
+
+                    <div
+                        id="post-actions"
+                        class="post-actions"
+                    ></div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             LOADING
+        ========================== -->
+
+        <div
+            id="loading"
+            class="loading hidden"
+        >
+            CARREGANDO...
+        </div>
+
+    </main>
+
+
+    <!-- JAVASCRIPT -->
+
+    <script src="./game.js"></script>
+
+</body>
+</html>
+```

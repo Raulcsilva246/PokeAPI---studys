@@ -36,11 +36,15 @@ let vantagens = {
     fairy: ["fighting", "dragon", "dark"]
 };
 
-tipoA = ""
-ataqueA = 0
+let tipoA = ""
+let ataqueA = 0
+let defesaA = 0
+let pontuacao_finalA = 0
 
-tipoB = ""
-ataqueB = 0
+let tipoB = ""
+let ataqueB = 0
+let defesaB = 0
+let pontuacao_finalB = 0
 
 let dadospkx = {} //variavel para receber o retorno da api
 
@@ -111,6 +115,7 @@ async function red_dex(){
 
     tipoA = dadosA.types[0].type.name
     ataqueA = dadosA.stats[1].base_stat
+    defesaA = dadosA.stats[2].base_stat
 }
 
 async function blue_dex(){
@@ -130,6 +135,7 @@ async function blue_dex(){
 
     tipoB = dadosB.types[0].type.name
     ataqueB = dadosB.stats[1].base_stat
+    defesaB = dadosB.stats[2].base_stat
     
 }
 
@@ -144,9 +150,13 @@ result.innerHTML = "Vencedor:"
         ataqueB = ataqueB * 2
 }
 
-if(ataqueA > ataqueB){
+    pontuacao_finalA = ataqueA - defesaB
+    pontuacao_finalB = ataqueB - defesaB
+
+
+if(pontuacao_finalA > pontuacao_finalB){
     result.innerHTML = "Vencedor:<br>" + dadosA.name
-}else if(ataqueA < ataqueB){
+}else if(pontuacao_finalA < pontuacao_finalB){
     result.innerHTML = "Vencedor:<br> " + dadosB.name
 }else{
     result.innerHTML = "Empate"
@@ -157,9 +167,13 @@ if(ataqueA > ataqueB){
 function reset() {
     tipoA = ""
     ataqueA = 0
+    defesaA = 0
+    pontuacao_finalA = 0
 
     tipoB = ""
     ataqueB = 0
+    defesaB = 0
+    pontuacao_finalB = 0
 
     dadosA = {}
     dadosB = {}

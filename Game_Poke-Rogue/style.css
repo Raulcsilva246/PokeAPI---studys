@@ -1,0 +1,1120 @@
+
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --bg: #11131a;
+    --panel: #1b1f29;
+    --panel-2: #252b38;
+    --line: #475064;
+
+    --text: #f3f4f6;
+    --muted: #aeb6c5;
+
+    --accent: #f5c542;
+    --green: #58d68d;
+    --red: #e85d75;
+    --blue: #5dade2;
+}
+
+
+/* =========================
+   GERAL
+========================= */
+
+body {
+    margin: 0;
+    min-height: 100vh;
+
+    background:
+        radial-gradient(
+            circle at top,
+            #293044 0%,
+            var(--bg) 55%
+        ),
+        var(--bg);
+
+    color: var(--text);
+
+    font-family: "Press Start 2P", cursive;
+}
+
+
+button {
+    font: inherit;
+}
+
+
+#app {
+    min-height: 100vh;
+}
+
+
+/* =========================
+   TELAS
+========================= */
+
+.screen {
+    display: none;
+
+    min-height: 100vh;
+
+    padding: 24px;
+}
+
+
+.screen.active {
+    display: flex;
+}
+
+
+.hidden {
+    display: none !important;
+}
+
+
+/* =========================
+   HOME
+========================= */
+
+.home-panel,
+.pregame-panel {
+
+    width: min(900px, 100%);
+
+    margin: auto;
+
+    text-align: center;
+
+    padding: 50px 30px;
+
+    border: 3px solid var(--line);
+
+    border-radius: 16px;
+
+    background: rgba(27, 31, 41, 0.94);
+
+    box-shadow:
+        0 20px 60px rgba(0, 0, 0, 0.35);
+}
+
+
+.eyebrow,
+.screen-heading span,
+.label {
+
+    color: var(--accent);
+
+    font-size: 10px;
+}
+
+
+.home-panel h1 {
+
+    margin: 25px 0;
+
+    font-size:
+        clamp(
+            34px,
+            8vw,
+            76px
+        );
+
+    line-height: 1.35;
+
+    text-shadow:
+        5px 5px 0 #000;
+}
+
+
+.home-panel h1 span {
+
+    color: var(--accent);
+}
+
+
+.subtitle,
+.message {
+
+    color: var(--muted);
+
+    font-size: 11px;
+
+    line-height: 2;
+}
+
+
+/* =========================
+   BOTÕES
+========================= */
+
+.main-button {
+
+    margin-top: 30px;
+
+    padding: 18px 28px;
+
+    border: 3px solid #fff;
+
+    background: var(--accent);
+
+    color: #111;
+
+    cursor: pointer;
+
+    box-shadow:
+        5px 5px 0 #000;
+
+    transition:
+        transform 0.1s,
+        box-shadow 0.1s;
+}
+
+
+.main-button:hover {
+
+    transform:
+        translate(2px, 2px);
+
+    box-shadow:
+        3px 3px 0 #000;
+}
+
+
+.main-button:disabled {
+
+    cursor: not-allowed;
+
+    opacity: 0.45;
+}
+
+
+/* =========================
+   PRÉ-JOGO
+========================= */
+
+.pregame-panel {
+
+    max-width: 1000px;
+}
+
+
+.screen-heading {
+
+    display: grid;
+
+    gap: 18px;
+
+    margin-bottom: 40px;
+}
+
+
+.screen-heading strong {
+
+    font-size: 20px;
+}
+
+
+/* =========================
+   SLOTS DA EQUIPE
+========================= */
+
+.team-slots {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 20px;
+}
+
+
+.team-slot {
+
+    min-height: 240px;
+
+    position: relative;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 10px;
+
+    border:
+        3px solid var(--line);
+
+    border-radius: 12px;
+
+    background:
+        var(--panel-2);
+}
+
+
+.team-slot span {
+
+    position: absolute;
+
+    top: 12px;
+
+    left: 12px;
+
+    color: var(--accent);
+
+    font-size: 9px;
+}
+
+
+.team-slot > div {
+
+    font-size: 38px;
+
+    color: var(--muted);
+}
+
+
+.team-slot img {
+
+    width: 150px;
+
+    height: 150px;
+
+    image-rendering: pixelated;
+
+    object-fit: contain;
+}
+
+
+.team-slot strong {
+
+    font-size: 12px;
+}
+
+
+.team-slot small {
+
+    color: var(--muted);
+
+    font-size: 8px;
+}
+
+
+.team-slot.filled {
+
+    border-color:
+        var(--accent);
+}
+
+
+/* =========================
+   AÇÕES DO PRÉ-JOGO
+========================= */
+
+.pregame-actions {
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 18px;
+}
+
+
+/* =========================
+   CABEÇALHO DO JOGO
+========================= */
+
+.game-header {
+
+    width:
+        min(1500px, 100%);
+
+    margin:
+        0 auto 18px;
+
+    display: grid;
+
+    grid-template-columns:
+        150px 1fr 150px;
+
+    gap: 20px;
+
+    align-items: center;
+}
+
+
+.game-header > div {
+
+    padding: 15px;
+
+    border:
+        2px solid var(--line);
+
+    background:
+        var(--panel);
+}
+
+
+.game-header strong {
+
+    display: block;
+
+    margin-top: 8px;
+
+    font-size: 15px;
+}
+
+
+.battle-message {
+
+    min-height: 52px;
+
+    text-align: center;
+
+    color: var(--accent);
+
+    line-height: 1.7;
+
+    font-size: 10px;
+}
+
+
+/* =========================
+   LAYOUT DA BATALHA
+========================= */
+
+.battle-layout {
+
+    width:
+        min(1500px, 100%);
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        220px 1fr;
+
+    gap: 18px;
+}
+
+
+/* =========================
+   PAINEL DA EQUIPE
+========================= */
+
+.team-panel {
+
+    padding: 15px;
+
+    border:
+        2px solid var(--line);
+
+    background:
+        var(--panel);
+}
+
+
+.team-panel h2 {
+
+    font-size: 11px;
+
+    color:
+        var(--accent);
+}
+
+
+.battle-team-card {
+
+    margin-top: 10px;
+
+    padding: 9px;
+
+    border:
+        2px solid var(--line);
+
+    background:
+        var(--panel-2);
+
+    cursor: pointer;
+}
+
+
+.battle-team-card.active {
+
+    border-color:
+        var(--accent);
+}
+
+
+.battle-team-card.fainted {
+
+    opacity: 0.35;
+
+    cursor: not-allowed;
+}
+
+
+.battle-team-card img {
+
+    display: block;
+
+    width: 70px;
+
+    height: 55px;
+
+    margin: auto;
+
+    image-rendering:
+        pixelated;
+
+    object-fit: contain;
+}
+
+
+.battle-team-card strong {
+
+    display: block;
+
+    text-align: center;
+
+    font-size: 8px;
+
+    margin-bottom: 7px;
+}
+
+
+/* =========================
+   HP PEQUENO
+========================= */
+
+.mini-hp {
+
+    height: 7px;
+
+    background:
+        #0d0f14;
+}
+
+
+.mini-hp div {
+
+    height: 100%;
+
+    background:
+        var(--green);
+}
+
+
+/* =========================
+   CAMPO DE BATALHA
+========================= */
+
+.battle-field {
+
+    position: relative;
+
+    overflow: hidden;
+
+    min-height: 730px;
+
+    border:
+        3px solid var(--line);
+
+    border-radius: 12px;
+
+    background:
+
+        linear-gradient(
+            transparent 69%,
+            rgba(0, 0, 0, 0.13) 69%
+        ),
+
+        #b8c98c;
+}
+
+
+/* =========================
+   CAIXAS DE STATUS
+========================= */
+
+.enemy-info,
+.player-info {
+
+    position: relative;
+
+    z-index: 3;
+
+    width:
+        min(330px, 45%);
+
+    padding: 14px;
+
+    border:
+        3px solid #202631;
+
+    border-radius: 8px;
+
+    background:
+        #f2f0dc;
+
+    color:
+        #202631;
+
+    box-shadow:
+        4px 4px 0
+        rgba(0, 0, 0, 0.25);
+}
+
+
+.enemy-info {
+
+    margin:
+        30px 30px 0 auto;
+}
+
+
+.player-info {
+
+    margin:
+        0 0 0 30px;
+}
+
+
+.player-name-line {
+
+    display: flex;
+
+    justify-content:
+        space-between;
+
+    font-size: 10px;
+}
+
+
+.enemy-info > div:first-child {
+
+    display: flex;
+
+    justify-content:
+        space-between;
+
+    font-size: 10px;
+}
+
+
+.enemy-info > span,
+.player-info > span {
+
+    display: block;
+
+    margin-top: 8px;
+
+    font-size: 8px;
+}
+
+
+/* =========================
+   BARRA DE HP
+========================= */
+
+.hp-bar {
+
+    height: 10px;
+
+    margin-top: 10px;
+
+    padding: 2px;
+
+    background:
+        #30343d;
+
+    border-radius: 6px;
+}
+
+
+.hp-fill {
+
+    width: 100%;
+
+    height: 100%;
+
+    background:
+        var(--green);
+
+    border-radius: 4px;
+
+    transition:
+        width 0.25s;
+}
+
+
+/* =========================
+   ARENA
+========================= */
+
+.arena {
+
+    position: absolute;
+
+    inset: 0;
+}
+
+
+.arena::before,
+.arena::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 280px;
+
+    height: 80px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(61, 83, 45, 0.25);
+}
+
+
+.arena::before {
+
+    top: 285px;
+
+    right: 80px;
+}
+
+
+.arena::after {
+
+    bottom: 200px;
+
+    left: 60px;
+}
+
+
+/* =========================
+   POKÉMONS
+========================= */
+
+.enemy-pokemon,
+.player-pokemon {
+
+    position: absolute;
+
+    z-index: 2;
+
+    width: 220px;
+
+    height: 220px;
+}
+
+
+.enemy-pokemon {
+
+    top: 100px;
+
+    right: 100px;
+}
+
+
+.player-pokemon {
+
+    bottom: 180px;
+
+    left: 100px;
+}
+
+
+.enemy-pokemon img,
+.player-pokemon img {
+
+    width: 100%;
+
+    height: 100%;
+
+    image-rendering:
+        pixelated;
+
+    object-fit: contain;
+}
+
+
+/* =========================
+   PARTE INFERIOR
+========================= */
+
+.battle-bottom {
+
+    position: absolute;
+
+    z-index: 5;
+
+    bottom: 0;
+
+    left: 0;
+
+    right: 0;
+
+    display: grid;
+
+    grid-template-columns:
+        45% 55%;
+
+    min-height: 175px;
+
+    padding: 15px;
+
+    background:
+        #202631;
+}
+
+
+/* =========================
+   TERMINAL
+========================= */
+
+.battle-terminal {
+
+    margin-left: 15px;
+
+    border:
+        3px solid #6c7587;
+
+    background:
+        #11151c;
+
+    padding: 14px;
+}
+
+
+#terminal-log {
+
+    min-height: 32px;
+
+    margin-bottom: 12px;
+
+    color:
+        #dce2eb;
+
+    font-size: 9px;
+
+    line-height: 1.7;
+}
+
+
+/* =========================
+   ATAQUES
+========================= */
+
+.moves {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 8px;
+}
+
+
+.move-button {
+
+    min-height: 50px;
+
+    padding: 8px;
+
+    border:
+        2px solid #697487;
+
+    background:
+        #252c38;
+
+    color:
+        #fff;
+
+    cursor: pointer;
+
+    text-align: left;
+
+    font-size: 8px;
+}
+
+
+.move-button:hover:not(:disabled) {
+
+    border-color:
+        var(--accent);
+}
+
+
+.move-button:disabled {
+
+    opacity: 0.4;
+
+    cursor: not-allowed;
+}
+
+
+.move-button small {
+
+    display: block;
+
+    margin-top: 5px;
+
+    color:
+        var(--muted);
+
+    font-size: 7px;
+}
+
+
+/* =========================
+   MODAL
+========================= */
+
+.modal {
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 20;
+
+    display: grid;
+
+    place-items: center;
+
+    background:
+        rgba(0, 0, 0, 0.7);
+}
+
+
+.modal-card {
+
+    width:
+        min(520px, 90%);
+
+    padding: 30px;
+
+    border:
+        3px solid var(--accent);
+
+    background:
+        var(--panel);
+
+    text-align: center;
+}
+
+
+.modal-card h2 {
+
+    color:
+        var(--accent);
+
+    font-size: 20px;
+}
+
+
+.modal-card p {
+
+    color:
+        var(--muted);
+
+    font-size: 9px;
+
+    line-height: 2;
+}
+
+
+/* =========================
+   BOTÕES PÓS-BATALHA
+========================= */
+
+.post-actions {
+
+    display: grid;
+
+    gap: 12px;
+
+    margin-top: 25px;
+}
+
+
+.post-actions button {
+
+    padding: 14px;
+
+    border:
+        2px solid var(--line);
+
+    background:
+        var(--panel-2);
+
+    color:
+        #fff;
+
+    cursor: pointer;
+
+    font-size: 9px;
+}
+
+
+.post-actions button:hover {
+
+    border-color:
+        var(--accent);
+}
+
+
+/* =========================
+   LOADING
+========================= */
+
+.loading {
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 50;
+
+    display: grid;
+
+    place-items: center;
+
+    background:
+        rgba(0, 0, 0, 0.8);
+
+    color:
+        var(--accent);
+
+    font-size: 13px;
+}
+
+
+/* =========================
+   RESPONSIVIDADE
+========================= */
+
+@media (max-width: 900px) {
+
+    .battle-layout {
+
+        grid-template-columns:
+            1fr;
+    }
+
+
+    .team-panel {
+
+        order: 2;
+    }
+
+
+    .battle-team-card {
+
+        display: inline-block;
+
+        width: 30%;
+
+        vertical-align: top;
+
+        margin-right: 1%;
+    }
+
+
+    .battle-field {
+
+        min-height: 680px;
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    .screen {
+
+        padding: 10px;
+    }
+
+
+    .team-slots {
+
+        grid-template-columns:
+            1fr;
+    }
+
+
+    .team-slot {
+
+        min-height: 160px;
+    }
+
+
+    .team-slot img {
+
+        width: 100px;
+
+        height: 100px;
+    }
+
+
+    .game-header {
+
+        grid-template-columns:
+            1fr 1fr;
+    }
+
+
+    .battle-message {
+
+        grid-column:
+            1 / -1;
+
+        grid-row: 1;
+    }
+
+
+    .enemy-info,
+    .player-info {
+
+        width: 55%;
+    }
+
+
+    .enemy-pokemon {
+
+        right: 15px;
+    }
+
+
+    .player-pokemon {
+
+        left: 15px;
+    }
+
+
+    .battle-bottom {
+
+        grid-template-columns:
+            1fr;
+
+        overflow-y: auto;
+    }
+
+
+    .battle-terminal {
+
+        margin:
+            12px 0 0;
+    }
+}
